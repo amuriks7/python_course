@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
     for index in range(1, 11):
         group.add(
-            Student(f'Petrov{index}', 20 + index, 'male', 4)
+            Student(f'Petrov{index}', 19 + index, 'male', 4)
         )
 
     print(group)
