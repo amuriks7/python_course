@@ -9,6 +9,9 @@
 
 class Book:
     def __init__(self, name, price, pages, year_of_release):
+        if price < 0:
+            raise Exception("Invalid price, should be > 0")
+
         self.name = name
         self.price = price
         self.pages = pages
@@ -19,15 +22,12 @@ class Book:
 
 
 if __name__ == "__main__":
+    price = float(input('Цена товара: '))
     try:
-        price = float(input('Цена товара: '))
-        if price < 0:
-            raise Exception("Invalid price, should be > 0")
+        book1 = Book("Python 1 edition", price, "650", "2011")
+        book2 = Book("Python PRO edition", price, "650", "2011")
     except Exception as err:
         print(err)
     else:
-        book1 = Book("Python 1 edition", price, "650", "2011")
-        book2 = Book("Python PRO edition", price, "650", "2011")
-
         print(book1)
         print(book2)

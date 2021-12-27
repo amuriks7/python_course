@@ -9,7 +9,7 @@ class Student(Human):
         self.course = course
 
     def __str__(self):
-        return f'Student: {super().__str__()}, course: {self.course}\n'
+        return f'Student: {super().__str__()}, course: {self.course}'
 
 
 if __name__ == '__main__':

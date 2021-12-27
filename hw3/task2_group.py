@@ -27,7 +27,7 @@ class Student(Human):
         self.course = course
 
     def __str__(self):
-        return f'Student: {super().__str__()}, course: {self.course}\n'
+        return f'Student: {super().__str__()}, course: {self.course}'
 
 
 class Group:
@@ -52,23 +52,21 @@ class Group:
         return result
 
     def __str__(self):
-        result = "\n"
-        j = 0
-        for student in self.student_list:
-            result += f'{j} {student}'
-            j = j + 1
+        res = '\n\t'.join(map(str, self.student_list))
 
-        return 'Student list:' + result
+        return f'Student list:\n\t{res}'
 
 
 if __name__ == '__main__':
     group = Group()
 
-    for index in range(1, 13):
-        try:
+    try:
+        for index in range(1, 13):
             group.add(
                 Student(f'Petrov{index}', 19 + index, 'male', 4)
             )
-        except TooManyStudentsInGroupException as e:
-            print(group)
-            print(e.message)
+    except TooManyStudentsInGroupException as e:
+        print(group)
+        print(e.message)
+    else:
+        print(group)
