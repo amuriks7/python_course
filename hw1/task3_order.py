@@ -29,7 +29,7 @@ class Order:
         for product in self.products:
             products_information += f'\t{str(product)}\n'
 
-        return f'Цена заказа: {order.calculate_order_price()}\nЗаказ от {str(self.client)}\n\nТовары:\n{products_information}'
+        return f'Цена заказа: {self.calculate_order_price()}\nЗаказ от {str(self.client)}\n\nТовары:\n{products_information}'
 
 
 if __name__ == "__main__":
