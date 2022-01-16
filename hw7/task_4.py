@@ -4,7 +4,6 @@
 """
 stop = 10
 
-print([v ** 3 for v in range(2, stop)])
-
-
-
+x = (v ** 3 for v in range(2, stop))
+y = list(x)
+print(y)
